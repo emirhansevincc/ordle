@@ -9,7 +9,7 @@ const Letter = ({ letterPosition, rowCount }) => {
 
   const correct = correctWord.toUpperCase()[letterPosition] === letter;
   const almostCorrect =
-    !correct && correctWord.includes(letter) && letter !== "";
+    !correct && correctWord.toUpperCase().includes(letter) && letter !== "";
   const status =
     currentAttempt.rowAttempt > rowCount &&
     (correct ? "correct" : almostCorrect ? "almost" : "error");
